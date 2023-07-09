@@ -5,7 +5,7 @@ from typing import Union, Any
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
-import basic.Day5 as day5
+import basic.Day6 as day6
 
 
 def print_hi(name):
@@ -15,9 +15,6 @@ def print_hi(name):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    s1 = "helloworld"
-    s2 = "rldhellowo"
 
-    print(day5.divide_same_word(s1, s2))
 
 
