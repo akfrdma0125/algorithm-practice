@@ -1,4 +1,5 @@
 # This is a sample Python script.
+import re
 from typing import Union, Any
 
 
@@ -15,5 +16,4 @@ def print_hi(name):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    result = greedy.set_number_one()
-    print(result)
+    greedy.get_min_number()
