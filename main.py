@@ -5,7 +5,7 @@ from typing import Union, Any
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
-import basic.Day6 as day6
+import basic.Day7 as day7
 
 
 def print_hi(name):
@@ -15,6 +15,6 @@ def print_hi(name):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-
+    day7.get_polynomial("3x + 7 + x")
 
 
