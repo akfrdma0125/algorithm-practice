@@ -1,4 +1,5 @@
 import re
+import sys
 from functools import reduce
 
 
@@ -55,13 +56,14 @@ def get_best_sequence():
 
     return sum(answer)
 
+
 # 백준 ..
 def get_min_number():
     n = input()
     sum_of_bracket = 0
     number = ''
     answer = 0
-    bracket = True #괄호는 오픈
+    bracket = True  # 괄호는 오픈
 
     # 괄호 안에 있는 더하기 or 그냥 더하기 구분 필요
     # 언제 괄호가 닫히나요?
@@ -75,9 +77,9 @@ def get_min_number():
                 answer += sum_of_bracket + int(number)
             else:
                 answer -= sum_of_bracket + int(number)
-            #괄호 새로 오픈
+            # 괄호 새로 오픈
             sum_of_bracket = 0
-            #음수 괄호 오픈
+            # 음수 괄호 오픈
             bracket = False
             number = ''
         elif element == '+':
@@ -91,3 +93,48 @@ def get_min_number():
         answer -= sum_of_bracket + int(number)
 
     print(answer)
+
+
+    # 만약 첫 번째 숫자가 같으면 넘겨 왜냐면 이미 앞의 숫자가 가져가서 ..
+    # 기존의 두 번째 숫자 > 새 리소스의 첫번째 숫자 면 새로운 회의 등록!
+    # 기존의 두 번째 숫자 > 새 리소스의 두번째 숫자 면 그게 골라지는 거지..
+def get_best_time_table():
+    n = int(input())
+    numbers = []
+    answer = []
+    for i in range(n):
+        numbers.append(list(map(int, input().split())))
+    numbers.sort()
+    answer.append(numbers[0])
+    temp = numbers[0]
+    for number in numbers:
+        if number[0] >= temp[1]:
+            print("append right now", number)
+            answer.append(number)
+        elif number[1] <= temp[1]:
+            print("append after changing", number)
+            answer.pop()
+            answer.append(number)
+        temp = answer[-1]
+    print(len(answer))
+
+def selection():
+    n = int(input())
+    numbers = []
+    for line in sys.stdin:
+        numbers.append(line.rstrip())
+    # numbers = [sys.stdin.readline().rstrip().split() for _ in range(n)]
+    print(numbers)
+    answer = 0
+    # for i in range(n):
+    #     numbers.append(list(map(int, sys.stdin.readline().split())))
+    # numbers.sort(key= lambda x: (x[1],x[0]))
+    numbers.sort(key= lambda x: x[0])
+    numbers.sort(key= lambda x: x[1])
+    f = numbers[0][0]
+    for number in numbers:
+        if f <= number[0]:
+            answer += 1
+            f = number[1]
+    print(answer)
+
