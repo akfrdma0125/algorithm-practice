@@ -5,7 +5,7 @@ from typing import Union, Any
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
-import greedy
+import Implementaion
 import time
 
 
@@ -30,7 +30,7 @@ def solve(tables):
 if __name__ == '__main__':
     start_time = time.time()
 
-    greedy.selection()
+    Implementaion.play_game()
     # program 소스코드
 
     end_time = time.time()
