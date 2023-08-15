@@ -114,7 +114,8 @@ print((lambda a, b: a+b)(3,7))
 ex_arr= [('a',1),('b',2),('c',3)]
 # 두번째 원소를 기준으로 정렬하고 싶을 때
 
-def my_key(x): return x[1]
+def my_key(
+        x): return x[1]
 
 print(sorted(ex_arr, key= my_key)) # key는 매개변수가 함수인 함수
 print(sorted(ex_arr, key= lambda x:x[1])) # lambda식으로 my_key와 동일한 내용 선언
