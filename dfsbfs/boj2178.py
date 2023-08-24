@@ -8,7 +8,7 @@ dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 
 
-def dfs(x, y):
+def bfs(x, y):
     queue = deque()
     queue.append((x, y))
     while queue:
@@ -26,4 +26,4 @@ def dfs(x, y):
     return graph[n - 1][m - 1]
 
 
-print(dfs(0, 0))
+print(ord(bfs(0, 0))-ord('0'))
